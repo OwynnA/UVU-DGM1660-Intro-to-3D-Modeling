@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: practice.ma
-//Last modified: Tue, Sep 06, 2022 02:54:40 PM
+//Last modified: Tue, Sep 06, 2022 08:10:18 PM
 //Codeset: UTF-8
 requires maya "2023";
 requires "mtoa" "5.1.2";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202205052215-234554116d";
 fileInfo "osv" "Mac OS X 10.16";
-fileInfo "UUID" "EA991F62-0448-D18F-7B4F-34A9027D37E9";
+fileInfo "UUID" "48F5B690-FD49-D8A3-BAC6-CCA8203AD041";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "143B17DB-4952-DA2A-2895-6DA80A8248C7";
@@ -206,7 +206,7 @@ createNode lambert -n "red_diff_mat";
 createNode shadingEngine -n "lambert2SG";
 	rename -uid "C6B32E97-3641-B0E2-DA35-6B9EEBC54CA5";
 	setAttr ".ihi" 0;
-	setAttr -s 3 ".dsm";
+	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 2 ".gn";
 createNode materialInfo -n "materialInfo1";
@@ -255,7 +255,7 @@ createNode groupParts -n "groupParts2";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[14:17]";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "B4BE579E-0948-EEF4-C4D1-FCBFCFB9F6B5";
+	rename -uid "049FF31E-4840-1F6A-DFA3-90ADA604E626";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -44.047617297323995 -617.85711830570688 ;
 	setAttr ".tgi[0].vh" -type "double2" 604.76188073082676 44.047617297323995 ;
