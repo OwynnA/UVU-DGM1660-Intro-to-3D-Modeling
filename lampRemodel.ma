@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: lampRemodel.ma
-//Last modified: Sat, Sep 17, 2022 12:56:27 PM
+//Last modified: Sat, Sep 17, 2022 12:59:43 PM
 //Codeset: UTF-8
 requires maya "2023";
 requires "mtoa" "5.1.2";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202205052215-234554116d";
 fileInfo "osv" "Mac OS X 10.16";
-fileInfo "UUID" "83C1C3A8-7746-CA7B-D0CD-438DB60F9CDC";
+fileInfo "UUID" "98F56879-5147-1AE5-54F1-2E8518A31251";
 createNode transform -s -n "persp";
 	rename -uid "7EEF9E95-E541-41B0-D517-7383C26C0F2B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -19.489721176298364 9.6541720577367549 8.6365899758448919 ;
-	setAttr ".r" -type "double3" -18.338352730239716 -67.799999999911662 0 ;
+	setAttr ".t" -type "double3" 18.790928062217013 10.070550393998211 1.167315961656378 ;
+	setAttr ".r" -type "double3" -19.538352730226769 -270.19999999990011 -4.5558182481080637e-13 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "57C6E0EA-6044-CB9B-1028-50939D775A96";
 	setAttr -k off ".v" no;
