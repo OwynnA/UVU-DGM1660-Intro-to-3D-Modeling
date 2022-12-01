@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: final_project.ma
-//Last modified: Thu, Dec 01, 2022 04:36:48 AM
+//Last modified: Thu, Dec 01, 2022 04:42:24 AM
 //Codeset: UTF-8
 requires maya "2023";
 requires "mtoa" "5.1.2";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202205052215-234554116d";
 fileInfo "osv" "Mac OS X 10.16";
-fileInfo "UUID" "2F5D3403-5E4F-D08D-7131-6DA25F9183AE";
+fileInfo "UUID" "E95ABB7E-3F4B-DC72-F2C6-5289854CF3A4";
 createNode transform -s -n "persp";
 	rename -uid "B551EFB5-2B45-D472-1D60-B48FB8C66DE1";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 5.9275075977769536 13.453408649395708 -0.93192181972882171 ;
-	setAttr ".r" -type "double3" -398.40000000311142 -265.20000000004103 0 ;
+	setAttr ".t" -type "double3" 56.724421283411466 65.708781669934837 -0.60841408471791081 ;
+	setAttr ".r" -type "double3" -405.600000002711 -267.60000000000133 -7.6333312355124402e-14 ;
 	setAttr ".rp" -type "double3" 0 8.8817841970012523e-16 -8.8817841970012523e-16 ;
 	setAttr ".rpt" -type "double3" -2.132219065020764e-14 7.1151605562559882e-15 1.1578074454925035e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -23,7 +23,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 15.455906693972313;
+	setAttr ".coi" 83.166043791236902;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -62450,8 +62450,8 @@ parent -s -nc -r -add "|pCylinder1|pCylinderShape1" "pCylinder2" ;
 parent -s -nc -r -add "|group54|pasted__group6|pasted__pasted__pCube4|pasted__pasted__pCubeShape4" "pasted__pasted__pCube19" ;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "044FC823-AC43-B43E-143C-E69A62065E26";
-	setAttr -s 20 ".lnk";
-	setAttr -s 20 ".slnk";
+	setAttr -s 23 ".lnk";
+	setAttr -s 23 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "BC9860AD-4C40-81D6-77AF-D9924D46A985";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -65369,7 +65369,6 @@ createNode lambert -n "horns";
 createNode shadingEngine -n "lambert6SG";
 	rename -uid "A4AB4A05-6E47-CAA2-402B-FEBB1B751A36";
 	setAttr ".ihi" 0;
-	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo6";
 	rename -uid "D1EC2686-D046-5104-2BD2-F98C18409F1D";
@@ -65513,6 +65512,36 @@ createNode shadingEngine -n "lambert14SG";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo18";
 	rename -uid "E273B4E5-2343-B996-A76F-B9BD8ACE11B5";
+createNode lambert -n "walls";
+	rename -uid "FD22887B-2841-E778-38DA-2EB32598F318";
+	setAttr ".c" -type "float3" 0.34299999 0.24214858 0.061397005 ;
+createNode shadingEngine -n "lambert15SG";
+	rename -uid "9791EEC4-CE48-61F0-887B-89A28B14534D";
+	setAttr ".ihi" 0;
+	setAttr -s 10 ".dsm";
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo19";
+	rename -uid "C111A2FC-7141-CD72-D18F-AFBBA790325F";
+createNode lambert -n "floor";
+	rename -uid "A6CC9086-2943-385C-4D29-A390A7A36CFB";
+	setAttr ".c" -type "float3" 0.252 0.252 0.252 ;
+createNode shadingEngine -n "lambert16SG";
+	rename -uid "E69A942F-4147-A3FB-B7D7-2C8153281DE4";
+	setAttr ".ihi" 0;
+	setAttr -s 3 ".dsm";
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo20";
+	rename -uid "267038A0-EA41-5AB8-0DED-E39477879E42";
+createNode lambert -n "railing";
+	rename -uid "D4E6CEC6-F14D-ED63-FF54-3BB53363A056";
+	setAttr ".c" -type "float3" 0.083999999 0.06227674 0.028392 ;
+createNode shadingEngine -n "lambert17SG";
+	rename -uid "40CFEC34-3D48-FE6B-A2ED-CDAE67BEE61F";
+	setAttr ".ihi" 0;
+	setAttr -s 38 ".dsm";
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo21";
+	rename -uid "9842EB64-344D-4F61-B41E-73A9786B2BD1";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -65523,15 +65552,15 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 20 ".st";
+	setAttr -s 23 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 23 ".s";
+	setAttr -s 26 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
 select -ne :initialShadingGroup;
-	setAttr -s 88 ".dsm";
+	setAttr -s 38 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 32 ".gn";
 select -ne :initialParticleSE;
@@ -65724,6 +65753,9 @@ relationship "link" ":lightLinker1" "standardSurface2SG.message" ":defaultLightS
 relationship "link" ":lightLinker1" "blinn2SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "blinn3SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert14SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert15SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert16SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert17SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -65744,6 +65776,9 @@ relationship "shadowLink" ":lightLinker1" "standardSurface2SG.message" ":default
 relationship "shadowLink" ":lightLinker1" "blinn2SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "blinn3SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert14SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert15SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert16SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert17SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "curveFromMeshEdge1.oc" "planarTrimSurface3.ic[0]";
@@ -66990,7 +67025,6 @@ connectAttr "pillars.msg" "materialInfo5.m";
 connectAttr "horns.oc" "lambert6SG.ss";
 connectAttr "groupId22.msg" "lambert6SG.gn" -na;
 connectAttr "polySurfaceShape1.iog.og[2]" "lambert6SG.dsm" -na;
-connectAttr "pCubeShape2.iog" "lambert6SG.dsm" -na;
 connectAttr "lambert6SG.msg" "materialInfo6.sg";
 connectAttr "horns.msg" "materialInfo6.m";
 connectAttr "hair.oc" "lambert7SG.ss";
@@ -67050,6 +67084,113 @@ connectAttr "polySurfaceShape1.iog.og[11]" "lambert14SG.dsm" -na;
 connectAttr "groupId31.msg" "lambert14SG.gn" -na;
 connectAttr "lambert14SG.msg" "materialInfo18.sg";
 connectAttr "eyes1.msg" "materialInfo18.m";
+connectAttr "walls.oc" "lambert15SG.ss";
+connectAttr "|group52|pasted__pCube4|pasted__pCubeShape4.iog" "lambert15SG.dsm" 
+		-na;
+connectAttr "|group13|pasted__group12|pasted__pasted__group7|pasted__pasted__pasted__group6|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape4.iog" "lambert15SG.dsm"
+		 -na;
+connectAttr "|group43|pasted__pCube18|pasted__pCubeShape4.iog" "lambert15SG.dsm"
+		 -na;
+connectAttr "|group6|pasted__pCube19|pasted__pCubeShape4.iog" "lambert15SG.dsm" 
+		-na;
+connectAttr "|group13|pasted__group12|pasted__pasted__group7|pasted__pasted__pasted__group6|pasted__pasted__pasted__pasted__pCube4|pasted__pasted__pasted__pasted__pCubeShape4.iog" "lambert15SG.dsm"
+		 -na;
+connectAttr "|group43|pasted__pCube4|pasted__pCubeShape4.iog" "lambert15SG.dsm" 
+		-na;
+connectAttr "|group6|pasted__pCube4|pasted__pCubeShape4.iog" "lambert15SG.dsm" -na
+		;
+connectAttr "pCubeShape2.iog" "lambert15SG.dsm" -na;
+connectAttr "|group54|pasted__group6|pasted__pasted__pCube19|pasted__pasted__pCubeShape4.iog" "lambert15SG.dsm"
+		 -na;
+connectAttr "|group54|pasted__group6|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.iog" "lambert15SG.dsm"
+		 -na;
+connectAttr "lambert15SG.msg" "materialInfo19.sg";
+connectAttr "walls.msg" "materialInfo19.m";
+connectAttr "floor.oc" "lambert16SG.ss";
+connectAttr "|group5|pasted__pCube5|pasted__pCubeShape5.iog" "lambert16SG.dsm" -na
+		;
+connectAttr "|group5|pasted__pCube17|pasted__pCubeShape5.iog" "lambert16SG.dsm" 
+		-na;
+connectAttr "pCubeShape1.iog" "lambert16SG.dsm" -na;
+connectAttr "lambert16SG.msg" "materialInfo20.sg";
+connectAttr "floor.msg" "materialInfo20.m";
+connectAttr "railing.oc" "lambert17SG.ss";
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder3|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder4|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder5|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder2|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder7|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder8|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder9|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder10|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder11|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder12|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder13|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder16|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder17|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder14|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder15|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|pCylinder2|pCylinderShape1.iog" "lambert17SG.dsm" -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder18|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder19|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder35|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder34|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder33|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder32|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder31|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder30|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder29|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder28|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder27|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder26|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder25|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder24|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder23|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|pCylinder1|pCylinderShape1.iog" "lambert17SG.dsm" -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder22|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder21|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder20|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder6|pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group31|pasted__group30|pasted__pasted__group17|pasted__pasted__pasted__pCylinder2|pasted__pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "|group31|pasted__group30|pasted__pasted__group17|pasted__pasted__pasted__pCylinder3|pasted__pasted__pasted__pCylinderShape2.iog" "lambert17SG.dsm"
+		 -na;
+connectAttr "lambert17SG.msg" "materialInfo21.sg";
+connectAttr "railing.msg" "materialInfo21.m";
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
@@ -67068,6 +67209,9 @@ connectAttr "standardSurface2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn3SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert14SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert15SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert16SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert17SG.pa" ":renderPartition.st" -na;
 connectAttr "Banner.msg" ":defaultShaderList1.s" -na;
 connectAttr "Throne_Decoration.msg" ":defaultShaderList1.s" -na;
 connectAttr "Morning_Star.msg" ":defaultShaderList1.s" -na;
@@ -67086,18 +67230,10 @@ connectAttr "standardSurface2.msg" ":defaultShaderList1.s" -na;
 connectAttr "pupil.msg" ":defaultShaderList1.s" -na;
 connectAttr "eyes.msg" ":defaultShaderList1.s" -na;
 connectAttr "eyes1.msg" ":defaultShaderList1.s" -na;
+connectAttr "walls.msg" ":defaultShaderList1.s" -na;
+connectAttr "floor.msg" ":defaultShaderList1.s" -na;
+connectAttr "railing.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|group5|pasted__pCube5|pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group6|pasted__pCube4|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group13|pasted__group12|pasted__pasted__group7|pasted__pasted__pasted__group6|pasted__pasted__pasted__pasted__pCube4|pasted__pasted__pasted__pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder2|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group31|pasted__group30|pasted__pasted__group17|pasted__pasted__pasted__pCylinder2|pasted__pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
 connectAttr "planarTrimmedSurfaceShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "planarTrimmedSurfaceShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "planarTrimmedSurfaceShape3.iog.og[0]" ":initialShadingGroup.dsm" -na
@@ -67159,92 +67295,6 @@ connectAttr "pasted__pasted__polySurfaceShape7.iog.og[0]" ":initialShadingGroup.
 connectAttr "pasted__pasted__polySurfaceShape7.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "pasted__pasted__planarTrimmedSurface5Shape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group43|pasted__pCube4|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group52|pasted__pCube4|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder3|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder4|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder5|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder6|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder7|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder8|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder9|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder10|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder11|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder12|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder13|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder14|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder15|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder16|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder17|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder18|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder19|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder20|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder21|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder22|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder23|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder24|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder25|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder26|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder27|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder28|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder29|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder30|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder31|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder32|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder33|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder34|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group24|pasted__group17|pasted__pasted__pCylinder35|pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|pCylinder1|pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|pCylinder2|pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|group5|pasted__pCube17|pasted__pCubeShape5.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group13|pasted__group12|pasted__pasted__group7|pasted__pasted__pasted__group6|pasted__pasted__pasted__pasted__pCube5|pasted__pasted__pasted__pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group43|pasted__pCube18|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group6|pasted__pCube19|pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group31|pasted__group30|pasted__pasted__group17|pasted__pasted__pasted__pCylinder3|pasted__pasted__pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group54|pasted__group6|pasted__pasted__pCube4|pasted__pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group54|pasted__group6|pasted__pasted__pCube19|pasted__pasted__pCubeShape4.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "polySurfaceShape6.iog.og[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape6.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
